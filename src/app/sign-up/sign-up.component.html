@@ -1,15 +1,15 @@
 <h2>Sign Up Page</h2>
 
-FirstName: <input type="text" name="" id="">
+FirstName: <input type="text" name="" id="" [(ngModel)] = "firstName">
 
-LastName : <input type="text" name="" id="">
-
-
-Email: <input type="email" name="" id="">
-
-Password: <input type="password" name="" id="">
-
-Re-Enter: <input type="password">
+<!-- LastName : <input type="text" name="" id=""> -->
 
 
+Email: <input type="email" [(ngModel)] = "email">
+
+Password: <input type="password" [(ngModel)] = "password">
+
+<!-- Re-Enter: <input type="password"> -->
+
+<input type="button" value="Submit" (click)= "saveuser()">
 <a routerLink="/login">Log Ins</a>

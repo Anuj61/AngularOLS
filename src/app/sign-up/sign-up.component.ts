@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { SessionService } from '../session.service';
 
 @Component({
@@ -18,14 +19,10 @@ export class SignUpComponent implements OnInit {
 
   saveuser(){
     
-    console.log(this.firstName)
-
-    console.log(this.email)
-
-    console.log(this.password)
-
-    let user = {"firstName":this.firstName, "email":this.email, "password":this.password}
-    this.sessionService.saveUser(user)
+    let user = {"firstName":this.firstName, "email":this.email, "password":this.password, "role":"6213608a529f58ee8d5c3f64"}
+    this.sessionService.saveUser(user).subscribe(resp=>{ ///subscribing to the event of service
+      console.log(resp);
+    })
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { RoleService } from '../role.service';
 
 @Component({
@@ -10,7 +12,7 @@ export class AddRoleComponent implements OnInit {
 
   roleName:string = ""
 
-  constructor(private roleService:RoleService, ) { }
+  constructor(private roleService:RoleService, private router:Router, private toastr:ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +21,12 @@ export class AddRoleComponent implements OnInit {
     let role = {roleName:this.roleName}
     this.roleService.addRole(role).subscribe(resp=>{
       console.log(resp)
+      
+      if(resp.status == 200){
+        //navigate list role
+        this.toastr.success("Successfully added")
+        this.router.navigateByUrl("/listRole")
+      }
     })
   }
 

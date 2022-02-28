@@ -10,7 +10,7 @@ export class AddRoleComponent implements OnInit {
 
   roleName:string = ""
 
-  constructor(private roleService:RoleService) { }
+  constructor(private roleService:RoleService, ) { }
 
   ngOnInit(): void {
   }

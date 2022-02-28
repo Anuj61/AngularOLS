@@ -13,5 +13,9 @@ export class RoleService {
     return this.httpClient.post("http://localhost:3000/roles",role)
   }
 
+  listRole():Observable<any>{
+    return this.httpClient.get("http://localhost:3000/roles")
+  }
+
 }
 

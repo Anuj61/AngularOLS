@@ -8,13 +8,19 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {  HttpClientModule} from '@angular/common/http';
 import { AddRoleComponent } from './admin/add-role/add-role.component';
+import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
+import { ListRoleComponent } from './admin/list-role/list-role.component';
+import { AddCategoryComponent } from './amdin/add-category/add-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    AddRoleComponent
+    AddRoleComponent,
+    AdminHeaderComponent,
+    ListRoleComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,

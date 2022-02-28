@@ -1,15 +1,57 @@
+<!-- EXAMPLE FORM -->
 <h2>Sign Up Page</h2>
 
-FirstName: <input type="text" name="" id="" [(ngModel)] = "firstName">
+<div>
+    <div>
+        I am:  <input type="radio" name="role" id="" value="user"  >User 
+               <input type="radio" name="role" id="" value="serviceProvider" >Service Provider
+               <!-- Add ngModel in both -->
+    </div>
+    
+    <div class="firstName">
+        Name:<input type="text" name="firstName" id="" placeholder="Name" [(ngModel)] = "firstName">
+    </div>
 
-<!-- LastName : <input type="text" name="" id=""> -->
+    <div class="email">
+        Email: <input type="email" name="email" id="" placeholder="Email" [(ngModel)] = "email">
+    </div>
+
+    <div class="password">
+        Password: <input type="password" name="password" id="" placeholder="Password" [(ngModel)] = "password">
+    </div>
+
+    <div class="confirmPassword">
+        confirmPassword: <input type="password" name="confirmPassword" id="" placeholder="Confirm Password">
+    </div>
+
+    <div class="select">
+        <select name="country" id="">
+            <option value="IND">
+                IND +91
+            </option>
+            <option value="CAN">
+                CAN +3
+            </option>
+            <option value="USA">
+                USA +1
+            </option>
+            <option value="UK">
+                UK +2</option>
+        </select>
+        <sup>MobileNumber</sup>
+        <input type="tel" name="mobileNum" id="" placeholder="Mobile Number">
+    </div>
 
 
-Email: <input type="email" [(ngModel)] = "email">
+    <div class="checkbox">
+        <input type="checkbox" name="T&C" id="">I agree to the terms and condition
+    </div>
 
-Password: <input type="password" [(ngModel)] = "password">
+    
+    <div class="signUp">
+        <input type="button" value="Submit" (click)= "saveuser()">
+    </div>
 
-<!-- Re-Enter: <input type="password"> -->
+    <a routerLink="/login">Log Ins</a> 
+</div>
 
-<input type="button" value="Submit" (click)= "saveuser()">
-<a routerLink="/login">Log Ins</a>

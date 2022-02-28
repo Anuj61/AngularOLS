@@ -12,6 +12,7 @@ export class SignUpComponent implements OnInit {
   firstName: string  = ""
   email: string = ""
   password: string = ""
+  // roleName : string = ""
   constructor(private sessionService:SessionService) { }
 
   ngOnInit(): void {

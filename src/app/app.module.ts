@@ -12,6 +12,7 @@ import { ListRoleComponent } from './admin/list-role/list-role.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { DelRoleComponent } from './admin/del-role/del-role.component';
+import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DelRoleComponent } from './admin/del-role/del-role.component';
     AddRoleComponent,
     ListRoleComponent,
     DelRoleComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,

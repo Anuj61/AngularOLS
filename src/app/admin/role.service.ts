@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RoleService {
+ 
 
   constructor(private httpClient:HttpClient) { }
 
@@ -15,6 +16,10 @@ export class RoleService {
 
   listRole():Observable<any>{
     return this.httpClient.get("http://localhost:3000/roles")
+  }
+
+  delRole(roleId:any):Observable<any>{
+    return this.httpClient.delete("http://localhost:3000/roles/"+roleId)
   }
 
 }

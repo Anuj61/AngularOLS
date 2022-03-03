@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddCategoryComponent } from './add-category.component';
+import { DelRoleComponent } from './del-role.component';
 
-describe('AddCategoryComponent', () => {
-  let component: AddCategoryComponent;
-  let fixture: ComponentFixture<AddCategoryComponent>;
+describe('DelRoleComponent', () => {
+  let component: DelRoleComponent;
+  let fixture: ComponentFixture<DelRoleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddCategoryComponent ]
+      declarations: [ DelRoleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddCategoryComponent);
+    fixture = TestBed.createComponent(DelRoleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

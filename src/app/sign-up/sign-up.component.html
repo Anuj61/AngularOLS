@@ -3,8 +3,8 @@
 
 <div>
     <div>
-        I am:  <input type="radio" name="role" id="" value="user"  >User 
-               <input type="radio" name="role" id="" value="serviceProvider" >Service Provider
+        I am:  <input type="radio" name="role" id="" [(ngModel)]="roleName" value="user" checked="true" >User 
+               <input type="radio" name="role" id="" [(ngModel)]="roleName" value="serviceProvider" >Service Provider
                <!-- Add ngModel in both -->
     </div>
     
@@ -17,7 +17,7 @@
     </div>
 
     <div class="password">
-        Password: <input type="password" name="password" id="" placeholder="Password" [(ngModel)] = "password">
+        Password: <input type="password" name="password" id="" placeholder="Password" [(ngModel)] = "password" required="true">
     </div>
 
     <div class="confirmPassword">

@@ -38,4 +38,8 @@ export class ListRoleComponent implements OnInit {
     })
   }
 
+  editRole(roleId:any){
+    this.router.navigateByUrl("/editRole/"+roleId)
+  }
+
 }

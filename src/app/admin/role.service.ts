@@ -21,6 +21,10 @@ export class RoleService {
   delRole(roleId:any):Observable<any>{
     return this.httpClient.delete("http://localhost:3000/roles/"+roleId)
   }
+  
+  updateRole(role:any):Observable<any>{
+    return this.httpClient.put("http://localhost:3000/roles",role)
+  }
 
 }
 

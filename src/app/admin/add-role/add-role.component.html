@@ -1,5 +1,22 @@
 <app-admin-header></app-admin-header>
-<div>
+<!-- <div>
     role: <input type="text" name="" id="" [(ngModel)] = "roleName">
           <input type="button" value="Submit" (click)="saveRole()" >
-</div>
+</div> -->
+
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add Role</h4>
+      <div class="forms-sample">
+        <div class="form-group">
+          <label for="roleName">Role Name</label>
+          <input type="text" class="form-control" id="roleName" placeholder="RoleName" [(ngModel)] = "roleName">
+        </div>
+        
+        
+        
+        <button type="submit" class="btn btn-primary me-2" (click)="saveRole()">Submit</button>
+        <button class="btn btn-light">Cancel</button>
+      </div>
+    </div>
+  </div>

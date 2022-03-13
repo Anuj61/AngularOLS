@@ -25,7 +25,7 @@ export class AddRoleComponent implements OnInit {
       if(resp.status == 200){
         //navigate list role
         this.toastr.success("Successfully added")
-        this.router.navigateByUrl("/listRole")
+        this.router.navigateByUrl("/admin/listRole")
       }
     })
   }

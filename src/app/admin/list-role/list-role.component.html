@@ -1,20 +1,25 @@
 <app-admin-header></app-admin-header>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>RoleId</th>
-            <th>RoleName</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr  *ngFor="let role of roles">
-                <td>{{role._id}}</td>
-                <td>{{role.roleName}}</td>
-                <tD><button (click)="editRole(role._id)" >Edit</button> | <button (click)="deleteRoleById(role._id)"> Delete </button></tD> 
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Role Table</h4>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+                <th>RoleId</th>
+                <th>RoleName</th>
+                <th>Action</th>
             </tr>
-    </tbody>
-
-
-</table> 
+          </thead>
+          <tbody>
+            <tr  *ngFor="let role of roles;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{role.roleName}}</td>
+                <tD><button class="btn btn-info me-2" (click)="editRole(role._id)" >Edit</button><button class="btn btn-info me-2" (click)="deleteRoleById(role._id)"> Delete </button></tD> 
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

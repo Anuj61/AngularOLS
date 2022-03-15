@@ -19,6 +19,9 @@ import { AddUserComponent } from './admin/add-user/add-user.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
+import { ListUserComponent } from './admin/list-user/list-user.component';
+import { DelUserComponent } from './admin/del-user/del-user.component';
+import { EditUserComponent } from './admin/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { AdminFooterComponent } from './admin/admin-footer/admin-footer.componen
     AdminComponent,
     AdminSidebarComponent,
     AdminFooterComponent,
+    ListUserComponent,
+    DelUserComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

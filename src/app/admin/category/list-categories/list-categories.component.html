@@ -1,0 +1,27 @@
+<app-admin-header></app-admin-header>
+
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Category Table</h4>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+                <th>Index</th>
+                <th>Category Name</th>
+                <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let category of categories;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{category.categoryName}}</td>
+                <tD>
+                <button class="btn btn-info me-2" (click)="editCategoryById(category._id)" >Edit</button>
+                <button class="btn btn-info me-2" (click)="delCategory(category._id)" > Delete </button></tD> 
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

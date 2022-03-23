@@ -24,4 +24,9 @@ export class SessionService {
     // console.log(user)
     return this.httpClient.post("http://localhost:3000/login",user)
   }
+
+  //forgot Pass
+  sendOtpForPassword(user:any):Observable<any>{
+    return this.httpClient.post("http://localhost:3000/sendotpforpassword", user)
+  }
 }

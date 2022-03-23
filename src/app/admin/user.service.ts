@@ -21,4 +21,12 @@ export class UserService {
     return this.httpClient.delete("http://localhost:3000/users/"+userId)
   }
 
+  updateUser(user:any):Observable<any>{
+    return this.httpClient.put("http://localhost:3000/users",user)
+  }
+
+  getUserById(userId:any):Observable<any>{
+    return this.httpClient.get("http://localhost:3000/users/"+userId)
+  }
+
 }

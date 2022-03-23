@@ -1,1 +1,38 @@
-<p>edit-user works!</p>
+<!-- <p>edit-user works!</p> -->
+
+
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Edit User</h4>
+
+      <!-- FirstName -->
+      <div class="forms-sample">
+        <div class="form-group">
+          <label for="exampleInputUsername1">FirstName</label>
+          <input type="text" class="form-control" id="exampleInputUsername1" placeholder="FirstName" [(ngModel)]="firstName">
+        </div>
+
+        <!-- Email Addres -->
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" [(ngModel)]="email">
+        </div>
+
+        
+        <!-- Contact Number -->
+        <div class="form-group">
+            <label for="exampleInputEmail1">Contact Number</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Contact Number" [(ngModel)]="contactNumber">
+          </div>
+
+        <div class="form-check form-check-flat form-check-primary">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            Remember me
+          <i class="input-helper"></i></label>
+        </div>
+        <button type="submit" class="btn btn-primary me-2" (click)="updateUser()">Submit</button>
+        <button class="btn btn-light" routerLink="/admin/listUser">Cancel</button>
+      </div>
+    </div>
+  </div>

@@ -22,7 +22,7 @@ export class ListRoleComponent implements OnInit {
 
   listAllRoles(){
     this.service.listRole().subscribe(resp =>{
-      console.log(resp)
+      // console.log(resp)
       this.roles = resp.data
     })
   }
@@ -39,7 +39,7 @@ export class ListRoleComponent implements OnInit {
   }
 
   editRole(roleId:any){
-    this.router.navigateByUrl("/editRole/"+roleId)
+    this.router.navigateByUrl("/admin/editRole/"+roleId)
   }
 
 }

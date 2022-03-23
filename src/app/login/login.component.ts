@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-
+    console.log("start");
+    
     let isError = false
     if(this.email == "" || this.email.trim().length == 0){
       this.emailError= "Please Enter email"
@@ -44,6 +45,9 @@ export class LoginComponent implements OnInit {
     if(isError){
 
     }else{
+
+      console.log("Inside else");
+      
       let user = {email:this.email, password:this.password}
 
     // if(this.email == "" || this.password == ""){
@@ -53,7 +57,10 @@ export class LoginComponent implements OnInit {
     
     this.sessionService.authenticate(user).subscribe(resp=>{
       if(resp.status == 200){
+        console.log("inside status 200")
         if(resp.data.role.roleName == "admin"){
+          console.log("inside admin");
+          
           this.router.navigateByUrl("/admin/admin-dashboard")
         }
         else if(resp.data.role.roleName == "serviceProvider"){
@@ -62,6 +69,8 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl("/user-dashboard")
         }
         this.toastr.success("", resp.msg, {timeOut:3000})
+      }else{
+        this.toastr.error("Invalid credentials")
       }
     })
     }

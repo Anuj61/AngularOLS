@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Edit Category</h4>
+      
+      <div class="forms-sample">
+        <div class="form-group">
+          <label for="inputCategory">Category Name</label>
+          <input type="text" class="form-control" id="inputCategory" placeholder="Category Name" [(ngModel)]="categoryName">
+        </div>
+        
+        
+        
+        
+        <button type="submit" class="btn btn-primary me-2" (click)="editCategory()">Submit</button>
+        <button class="btn btn-light" routerLink="/admin/listCategory">Cancel</button>
+      </div>
+    </div>
+  </div>

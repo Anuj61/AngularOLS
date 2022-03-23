@@ -1,7 +1,23 @@
 
-<p>Edit Role</p>
+<!-- <p>Edit Role</p>
 
 
 RoleName : <input type="text" [(ngModel)]="roleName" /> 
 <br><br>
-<button  (click)="updateRole()">Update Role</button> 
+<button  (click)="updateRole()">Update Role</button>  -->
+
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Edit Role</h4>
+      
+      <div class="forms-sample">
+        <div class="form-group">
+          <label for="inputRoleName">Role Name</label>
+          <input type="text"  class="form-control" id="inputRoleName" [(ngModel)]="roleName" >
+        </div>
+        
+        <button type="submit" class="btn btn-primary me-2" (click)="updateRole()">Update Role</button>
+        
+      </div>
+    </div>
+  </div>

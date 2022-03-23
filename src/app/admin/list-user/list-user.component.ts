@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../user.service';
 
@@ -9,7 +10,7 @@ import { UserService } from '../user.service';
 })
 export class ListUserComponent implements OnInit {
 
-constructor(private service:UserService, private toastr:ToastrService) { }
+constructor(private service:UserService, private toastr:ToastrService, private route: Router) { }
 
   users:Array<any>=[]
 
@@ -33,6 +34,10 @@ constructor(private service:UserService, private toastr:ToastrService) { }
         this.toastr.error("",resp.msg,{timeOut:3000})
       }
     })
+  }
+
+  editUserById(userId:any){
+    this.route.navigateByUrl("/admin/editUser/"+userId)
   }
 
 }

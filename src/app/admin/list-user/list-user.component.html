@@ -25,7 +25,7 @@
                 <td>{{user.role.roleName}}</td>
                 <td>{{user.gender}}</td>
                 <td>{{user.contactNumber}}</td>
-                <tD><button class="btn btn-info me-2" >Edit</button><button class="btn btn-info me-2" > Delete </button></tD> 
+                <tD><button class="btn btn-info me-2" (click)="editUserById(user._id)">Edit</button><button class="btn btn-info me-2" (click)="delUserById(user._id)"> Delete </button></tD> 
             </tr>
           </tbody>
         </table>

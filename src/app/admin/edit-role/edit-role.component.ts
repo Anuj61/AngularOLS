@@ -16,18 +16,20 @@ export class EditRoleComponent implements OnInit {
 
   ngOnInit(): void {
       this.roleId = this.aRoute.snapshot.params["roleId"] 
-      this.getRoleByRoleId() 
+      this.getRoleByRoleId(this.roleId)
   }
 
 
-  getRoleByRoleId(){
-    this.roleService.updateRole(this.roleId).subscribe(resp=>{
+  getRoleByRoleId(roleId:any){
+    this.roleService.listRoleById(this.roleId).subscribe(resp=>{
+      console.log("inside getRole by Id")
       this.roleName = resp.data.roleName
     })
   }
 
   updateRole(){
   //  alert(this.roleId+" "+this.roleName)
+  console.log("INside update role")
     let role = {
       roleId : this.roleId,
       roleName : this.roleName
@@ -35,7 +37,7 @@ export class EditRoleComponent implements OnInit {
     this.roleService.updateRole(role).subscribe(resp=>{
       if(resp.status == 200){
           this.tsService.success("",resp.msg,{timeOut:3000})
-          this.router.navigateByUrl("/listRole")
+          this.router.navigateByUrl("/admin/listRole")
         }else{
         this.tsService.error("",resp.msg,{timeOut:3000})
       }

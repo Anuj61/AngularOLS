@@ -31,19 +31,15 @@
               "node_modules/ngx-toastr/toastr.css",
               "src/assets/css/themify-icons.css",
               "src/assets/css/style.css"
-              
-              
-
-            ],
+             ],
             "scripts": [
+
               "src/assets/js/vendor.bundle.base.js",
               "src/assets/js/jquery.cookie.js",
               "src/assets/js/off-canvas.js",
               "src/assets/js/hoverable-collapse.js",
               "src/assets/js/template.js",
-              "src/assets/js/dashboard.js",
-              "node_modules/chart.js/dist/chart.min.js"
-              
+              "src/assets/js/dashboard.js"
             ]
           },
           "configurations": {

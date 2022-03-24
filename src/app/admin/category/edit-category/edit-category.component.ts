@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute,  Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from '../category.service';
 @Component({
@@ -12,7 +12,7 @@ export class EditCategoryComponent implements OnInit {
   categoryId:string = "";
   categoryName: string = "";
 
-  constructor(private categoryService: CategoryService, private aRoute:ActivatedRoute, private toastr:ToastrService, private router:Router) { }
+  constructor(private categoryService: CategoryService, private aRoute:ActivatedRoute, private router:Router, private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.categoryId = this.aRoute.snapshot.params["categoryId"];

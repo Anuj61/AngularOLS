@@ -12,7 +12,7 @@ export class ListSubcategoryComponent implements OnInit {
 
   subCategories:Array<any> = []
 
-  constructor(private subCatService:SubcategoryService, private router:Router, private toastr:ToastrService) { }
+  constructor(private subCatService:SubcategoryService, private toastr:ToastrService, private router:Router) { }
 
   ngOnInit(): void {
     this.listAllSubCat()
@@ -24,6 +24,26 @@ export class ListSubcategoryComponent implements OnInit {
       
     })
   }
+
+  delSubCat(subCatId:any){
+    this.subCatService.delSubCatById(subCatId).subscribe(resp=>{
+      if(resp.status == 200){
+        console.log(subCatId);
+        
+        this.toastr.success("", resp.msg, {timeOut:3000})
+        this.listAllSubCat()
+      }
+      else{
+        this.toastr.error("", resp.msg, {timeOut:3000})
+      }
+    })
+  }
+
+  editSubCat(subCatId:any){
+    this.router.navigateByUrl("/admin/editSubCategory/"+subCatId)
+  }
+
+ 
 
 
 }

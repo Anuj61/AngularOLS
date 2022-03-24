@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { SessionService } from 'src/app/session.service';
 import { RoleService } from '../role.service';
 
+
 @Component({
   selector: 'app-list-role',
   templateUrl: './list-role.component.html',

@@ -1,1 +1,25 @@
-<p>add-subcategory works!</p>
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add Sub-Category</h4>
+    
+      <div class="forms-sample">
+        <div class="form-group">
+          <label for="serviceName">Name</label>
+          <input type="text" class="form-control" id="serviceName" placeholder="Enter Service Name" [(ngModel)]="serviceName">
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="category">Category</label>
+            <select class="form-control" id="category" [(ngModel)]="catId">
+              <option *ngFor="let category of categories;" value={{category._id}}>{{category.categoryName}}</option>
+            </select>
+          </div>
+        
+        
+        
+        <button type="submit" class="btn btn-primary me-2" (click)="addSubCat()">Submit</button>
+        <button class="btn btn-light" routerLink="/admin/listSubCategory">Cancel</button>
+      </div>
+    </div>
+  </div>

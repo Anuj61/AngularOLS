@@ -30,7 +30,15 @@ import { EditSubcategoryComponent } from './admin/subcategory/edit-subcategory/e
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { NgChartsModule } from 'ng2-charts';
-
+import { ListAddressComponent } from './admin/address/list-address/list-address.component';
+import { AddAddressComponent } from './admin/address/add-address/add-address.component';
+import { EditAddressComponent } from './admin/address/edit-address/edit-address.component';
+import { ListReviewComponent } from './admin/review/list-review/list-review.component';
+import { EditReviewComponent } from './admin/review/edit-review/edit-review.component';
+import { ListVendorComponent } from './admin/vendor/list-vendor/list-vendor.component';
+import { AddVendorComponent } from './admin/vendor/add-vendor/add-vendor.component';
+import { EditVendorComponent } from './admin/vendor/edit-vendor/edit-vendor.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +63,15 @@ import { NgChartsModule } from 'ng2-charts';
     ListSubcategoryComponent,
     EditSubcategoryComponent,
     ForgotPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ListAddressComponent,
+    AddAddressComponent,
+    EditAddressComponent,
+    ListReviewComponent,
+    EditReviewComponent,
+    ListVendorComponent,
+    AddVendorComponent,
+    EditVendorComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +80,7 @@ import { NgChartsModule } from 'ng2-charts';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    NgChartsModule
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

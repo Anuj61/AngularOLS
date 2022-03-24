@@ -28,4 +28,10 @@ export class SubcategoryService {
   delSubCatById(subCatId:any):Observable<any>{
     return this.httpClient.delete("http://localhost:3000/subcategories/"+subCatId)
   }
+
+
+  //getting category for subcategory creation
+  listAllCategory():Observable<any>{
+    return this.httpClient.get("http://localhost:3000/categories")
+  } 
 }

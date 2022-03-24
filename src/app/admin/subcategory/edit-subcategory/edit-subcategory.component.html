@@ -1,1 +1,15 @@
-<p>edit-subcategory works!</p>
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Edit Sub-Category</h4>
+      
+      <div class="forms-sample">
+        <div class="form-group">
+          <label for="inputCategory">Sub-Category Name</label>
+          <input type="text" class="form-control" id="inputCategory" placeholder="Service Name" [(ngModel)]="serviceName">
+        </div>
+        
+        <button type="submit" class="btn btn-primary me-2" (click)="editSubCategory()">Submit</button>
+        <button class="btn btn-light" routerLink="/admin/listSubCategory">Cancel</button>
+      </div>
+    </div>
+  </div>

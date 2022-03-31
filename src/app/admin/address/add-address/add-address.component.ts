@@ -19,12 +19,12 @@ export class AddAddressComponent implements OnInit {
   constructor(private router:Router, private addressService:AddressService, private toastr:ToastrService) { }
 
   ngOnInit(): void {
-    this.getAllUsers()
+    this.getAddressUsers()
   }
 
 
-  getAllUsers(){
-    this.addressService.listAddressUser().subscribe(resp=>{
+  getAddressUsers(){
+    this.addressService.addressUserAdd().subscribe(resp=>{
       this.users = resp.data;
       console.log(this.users)
     })

@@ -22,4 +22,8 @@ export class AddressService {
   listAddressUser():Observable<any>{
     return this.httpClient.get("http://localhost:3000/userAddress")
   }
+
+  addressUserAdd():Observable<any>{
+    return this.httpClient.get("http://localhost:3000/listUserAddress")
+  }
 }

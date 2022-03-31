@@ -18,4 +18,8 @@ export class ReviewsService {
     return this.httpClient.put("http://localhost:3000/reviews", review)
   }
 
+  disableReview(reivewId:any):Observable<any>{
+    return this.httpClient.put("http://localhost:3000/reivewAction", reivewId)
+  }
+
 }

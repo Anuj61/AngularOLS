@@ -19,14 +19,18 @@
               <td>{{review.user.firstName}}</td>
               <td>{{review.serviceId.firstName}}</td>
               <td>{{review.reviewDetails}}</td>
-              <td ><i class="
-                ti-star menu-icon">{{review.stars}}</i>
-              </td>
+              <td >
+                <i *ngFor="let item of [].constructor(review.stars);let i=index" class="ti-star menu-icon"></i>
+               </td>
               <td> 
                 
                 <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitch" />
-                <label class="form-check-label" for="flexSwitch">Enable/Disable</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitch"  (click)="disableEnable(review._id,review.isActive)" />
+                <!-- <label class="form-check-label" for="flexSwitch"  >{{review.isActive?"Enable":"Disable"}}</label> -->
+                <label class="form-check-label" for="flexSwitch"  *ngIf="review.isActive== true">Enable</label>
+                <label class="form-check-label" for="flexSwitch"  *ngIf="review.isActive== false">Disable</label>
+
+
               </div>
 
             </td>

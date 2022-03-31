@@ -23,7 +23,18 @@ export class ListReviewComponent implements OnInit {
   listAllReviews(){
     this.reviewService.listReview().subscribe(resp=>{
       this.reivews = resp.data
-      console.log(this.reivews)
+      // console.log(resp)
+    })
+  }
+
+  disableEnable(reviewId:any, isActive:any){
+    let review = {
+      reviewId: reviewId,
+      isActive: !isActive
+    }
+    
+    this.reviewService.disableReview(review).subscribe(resp=>{
+      console.log(resp)
     })
   }
 

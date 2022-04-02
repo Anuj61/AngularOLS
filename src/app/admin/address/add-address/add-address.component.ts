@@ -26,7 +26,7 @@ export class AddAddressComponent implements OnInit {
   getAddressUsers(){
     this.addressService.addressUserAdd().subscribe(resp=>{
       this.users = resp.data;
-      console.log(this.users)
+      // console.log(this.users)
     })
   }
 
@@ -36,7 +36,7 @@ export class AddAddressComponent implements OnInit {
       address : this.addressDetails,
       pincode : this.pincode
     }
-
+    console.log(address)
     this.addressService.addAddress(address).subscribe(resp=>{
       if(resp.status== 200){
         this.toastr.success("", resp.msg, {timeOut:3000})

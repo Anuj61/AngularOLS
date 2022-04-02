@@ -18,6 +18,8 @@
               <td>{{address.userId.firstName}}</td>
               <td>{{address.address}}</td>
               <td>{{address.pincode}}</td>
+              
+              <tD><button class="btn btn-info me-2" (click)="editAddress(address._id)" >Edit</button><button class="btn btn-info me-2" (click)="delAddress(address._id)"> Delete </button></tD> 
             </tr>
           </tbody>
         </table>

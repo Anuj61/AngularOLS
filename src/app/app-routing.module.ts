@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddRoleComponent } from './admin/add-role/add-role.component';
 import { AddUserComponent } from './admin/add-user/add-user.component';
 import { AddAddressComponent } from './admin/address/add-address/add-address.component';
+import { EditAddressComponent } from './admin/address/edit-address/edit-address.component';
 import { ListAddressComponent } from './admin/address/list-address/list-address.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminComponent } from './admin/admin/admin.component';
@@ -66,6 +67,8 @@ const routes: Routes = [
     //address
     {path:"listAddress", component:ListAddressComponent},
     {path:"addAddress", component:AddAddressComponent},
+    {path:"editAddress/:addressId", component:EditAddressComponent},
+    
   ]},
   
 

@@ -24,14 +24,14 @@
                </td>
               <td> 
                 
-                <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitch"  (click)="disableEnable(review._id,review.isActive)" />
+                
+                <!-- <input class="form-check-input" type="checkbox" role="switch" id="flexSwitch"  (click)="disableEnable(review._id,review.isActive)" /> -->
                 <!-- <label class="form-check-label" for="flexSwitch"  >{{review.isActive?"Enable":"Disable"}}</label> -->
-                <label class="form-check-label" for="flexSwitch"  *ngIf="review.isActive== true">Enable</label>
-                <label class="form-check-label" for="flexSwitch"  *ngIf="review.isActive== false">Disable</label>
+                <!-- <label class="form-check-label" for="flexSwitch"  *ngIf="review.isActive== true">Enable</label>
+                <label class="form-check-label" for="flexSwitch"  *ngIf="review.isActive== false">Disable</label> -->
+                <button class="btn btn-info me-2"  (click)="disableEnable(review._id,review.isActive)">{{review.isActive?"Enabled":"Disabled"}}</button>
 
-
-              </div>
+    
 
             </td>
             </tr>

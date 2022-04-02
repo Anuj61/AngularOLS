@@ -1,1 +1,30 @@
-<p>edit-address works!</p>
+<div class="card">
+    <div class="card-body">
+      
+      <h4 class="card-title">Edit Address</h4>
+      <div class="forms-sample">
+
+        <div class="form-group">
+          <label for="address">Name</label>
+          <input type="text" class="form-control" placeholder="{{firstName}}" id="name" disabled >
+        </div>
+        
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" placeholder="Address" id="address" [(ngModel)]="addressDetails">
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode</label>
+          <input type="email" class="form-control" placeholder="Pincode" id="pincode" [(ngModel)]="pincode">
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="pincode">AddressId</label>
+          <input type="email" class="form-control" placeholder="addressId" id="addressId" [(ngModel)]="addressId">
+        </div> -->
+
+        <button type="submit" class="btn btn-primary me-2" (click)="updateAddress()">Submit</button>
+        <button class="btn btn-light" routerLink="/admin/listAddress" routerLink="/admin/listAddress">Cancel</button>
+      </div>
+    </div>
+  </div>

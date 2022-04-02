@@ -34,7 +34,7 @@ export class ListReviewComponent implements OnInit {
     }
     
     this.reviewService.disableReview(review).subscribe(resp=>{
-      console.log(resp)
+      this.listAllReviews()
     })
   }
 

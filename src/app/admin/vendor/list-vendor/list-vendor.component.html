@@ -1,1 +1,32 @@
-<p>list-vendor works!</p>
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Vendor Detail Table</h4>
+     
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+                <th>Index</th>
+              <th>Vendor Name</th>
+              <th>Service Name</th>
+              <th>Category Name</th>
+              <th>Service Details</th>
+              <th>Timing</th>
+              <th>Pricing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vendor of vendorDetails;let i=index">
+                <td>{{i+1}}</td>
+              <td>{{vendor.userId.firstName}}</td>
+              <td>{{vendor.subCatId.serviceName}}</td>
+              <td>{{vendor.subCatId.category.categoryName}}</td>
+              <td>{{vendor.serviceDetails}}</td>
+              <td>{{vendor.timing}}</td>
+              <td>{{vendor.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

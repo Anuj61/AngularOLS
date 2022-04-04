@@ -23,7 +23,7 @@ Password: <input type="password" [(ngModel)]="password"> <br><br>
               <h6 class="font-weight-light">Sign in to continue.</h6>
               
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg"  placeholder="Username" [(ngModel)]="email"><label style="color: red;" for="">{{emailError}}</label>
+                  <input type="email" class="form-control form-control-lg"  placeholder="Email" [(ngModel)]="email"><label style="color: red;" for="">{{emailError}}</label>
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control form-control-lg"  placeholder="Password" [(ngModel)]="password"><label style="color: red;" for="">{{passwordError}}</label>
@@ -33,12 +33,12 @@ Password: <input type="password" [(ngModel)]="password"> <br><br>
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="Sign In" (click)="login()">SIGN IN</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
+                  <!-- <div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input">
                       I agree with Terms & Condition
                     <i class="input-helper"></i></label>
-                  </div>
+                  </div> -->
                   <a href="#" class="auth-link text-black" routerLink="/forgotPassword">Forgot password?</a>
                 </div>
                 

@@ -38,7 +38,6 @@ import { EditReviewComponent } from './admin/review/edit-review/edit-review.comp
 import { ListVendorComponent } from './admin/vendor/list-vendor/list-vendor.component';
 import { AddVendorComponent } from './admin/vendor/add-vendor/add-vendor.component';
 import { EditVendorComponent } from './admin/vendor/edit-vendor/edit-vendor.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
  
 @NgModule({
   declarations: [
@@ -73,7 +72,6 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ListVendorComponent,
     AddVendorComponent,
     EditVendorComponent,
-    LandingPageComponent,
   ],
   imports: [
     BrowserModule,

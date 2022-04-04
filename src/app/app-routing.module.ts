@@ -20,6 +20,8 @@ import { ListReviewComponent } from './admin/review/list-review/list-review.comp
 import { AddSubcategoryComponent } from './admin/subcategory/add-subcategory/add-subcategory.component';
 import { EditSubcategoryComponent } from './admin/subcategory/edit-subcategory/edit-subcategory.component';
 import { ListSubcategoryComponent } from './admin/subcategory/list-subcategory/list-subcategory.component';
+import { AddVendorComponent } from './admin/vendor/add-vendor/add-vendor.component';
+import { ListVendorComponent } from './admin/vendor/list-vendor/list-vendor.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';  
@@ -68,6 +70,10 @@ const routes: Routes = [
     {path:"listAddress", component:ListAddressComponent},
     {path:"addAddress", component:AddAddressComponent},
     {path:"editAddress/:addressId", component:EditAddressComponent},
+
+    //vendorDetails
+    {path:"listVendorDetails", component:ListVendorComponent},
+    {path:"addVendorDetails", component:AddVendorComponent}
     
   ]},
   

@@ -15,6 +15,7 @@
             <div class="form-group">
                 <label for="exampleSelectGender">User Selection</label>
                 <select class="form-control" [(ngModel)] = "userId">
+                  <option value="" disabled selected>Select User</option>
                   <option *ngFor="let u of users" value="{{u._id}}">
                     {{u.firstName}}
                   </option>

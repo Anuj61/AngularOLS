@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { SessionService } from '../session.service';
@@ -16,6 +17,7 @@ export class SignUpComponent implements OnInit {
   roleName : string = ""
   role : string = ""
   confirmPassword: string = ""
+  contactNumber: string = ""
 
 
   firstNameError: string = ""
@@ -23,7 +25,7 @@ export class SignUpComponent implements OnInit {
   passwordError: string =  ""
   confirmPasswordError: string = ""
 
-  constructor(private sessionService:SessionService,private toastr:ToastrService) { }
+  constructor(private sessionService:SessionService,private toastr:ToastrService, private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -61,7 +63,7 @@ export class SignUpComponent implements OnInit {
     }else{
 
     //checking if user or serviceProvider
-    if(this.roleName === "serviceProvider"){
+    if(this.roleName === "vendor"){
       this.role = "621360a9529f58ee8d5c3f66"
     }else{
       this.role = "6213608a529f58ee8d5c3f64"//user
@@ -70,16 +72,17 @@ export class SignUpComponent implements OnInit {
 
     //checking password and confirm password
     
-    let user = {"firstName":this.firstName, "email":this.email, "password":this.password, "role":this.role}
-    console.log(user)
-    // this.sessionService.saveUser(user).subscribe(resp=>{ ///subscribing to the event of service
-    //   console.log(resp);
-    //   if(resp.status == 200){
-    //     this.toastr.success("", resp.msg, {timeOut:3000})
-    //   }else{
-    //     this.toastr.error("", resp.msg, {timeOut:3000})
-    //   }
-    // })
+    let user = {"firstName":this.firstName, "email":this.email, "password":this.password, "role":this.role, "contactNumber":this.contactNumber}
+    // console.log(user)
+    this.sessionService.saveUser(user).subscribe(resp=>{ ///subscribing to the event of service
+      // console.log(resp);
+      if(resp.status == 200){
+        this.toastr.success("", resp.msg, {timeOut:3000})
+        this.route.navigateByUrl("/login")
+      }else{
+        this.toastr.error("", resp.msg, {timeOut:3000})
+      }
+    })
     }
 
     

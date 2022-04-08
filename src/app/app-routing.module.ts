@@ -24,67 +24,68 @@ import { AddVendorComponent } from './admin/vendor/add-vendor/add-vendor.compone
 import { ListVendorComponent } from './admin/vendor/list-vendor/list-vendor.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { LoginComponent } from './login/login.component';  
+import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
+import { AuthGuard } from './auth/auth.guard';
+
 const routes: Routes = [
-  {path:"login", component:LoginComponent},
-  {path: "signUp", component:SignUpComponent},
-  {path: "", component:LoginComponent},
-  {path: "logout", component:LogoutComponent},
-  {path: "forgotPassword", component:ForgotPasswordComponent},
-  {path:"changePassword", component:ChangePasswordComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'signUp', component: SignUpComponent },
+  { path: '', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'forgotPassword', component: ForgotPasswordComponent },
+  { path: 'changePassword', component: ChangePasswordComponent },
 
-  {path: "admin", component: AdminComponent, children:[
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      { path: 'admin-dashboard', component: AdminDashboardComponent },
 
-    {path:"admin-dashboard", component:AdminDashboardComponent},
+      //role
+      { path: 'addRole', component: AddRoleComponent },
+      { path: 'listRole', component: ListRoleComponent },
+      { path: 'editRole/:roleId', component: EditRoleComponent },
 
+      //user
+      { path: 'addUser', component: AddUserComponent },
+      { path: 'listUser', component: ListUserComponent },
+      { path: 'editUser/:userId', component: EditUserComponent },
 
-    //role
-    {path:"addRole", component:AddRoleComponent},
-    {path:"listRole", component:ListRoleComponent},
-    {path:"editRole/:roleId", component:EditRoleComponent},
-   
+      //category
+      { path: 'listCategory', component: ListCategoriesComponent },
+      { path: 'addCategory', component: AddCategoryComponent },
+      { path: 'editCategory/:categoryId', component: EditCategoryComponent },
 
-    //user
-    {path:"addUser", component:AddUserComponent},
-    {path:"listUser", component:ListUserComponent},
-    {path:"editUser/:userId", component:EditUserComponent },
+      //subcategory
+      { path: 'listSubCategory', component: ListSubcategoryComponent },
+      { path: 'addSubCategory', component: AddSubcategoryComponent },
+      {
+        path: 'editSubCategory/:subCatId',
+        component: EditSubcategoryComponent,
+      },
 
-    //category
-    {path:"listCategory", component:ListCategoriesComponent},
-    {path:"addCategory", component:AddCategoryComponent},
-    {path:"editCategory/:categoryId", component:EditCategoryComponent},
+      //review
+      { path: 'listReview', component: ListReviewComponent },
 
-    //subcategory
-    {path:"listSubCategory", component:ListSubcategoryComponent},
-    {path:"addSubCategory", component:AddSubcategoryComponent},
-    {path:"editSubCategory/:subCatId", component:EditSubcategoryComponent},
-    
-    //review
-    {path:"listReview", component:ListReviewComponent},
-    
+      //address
+      { path: 'listAddress', component: ListAddressComponent },
+      { path: 'addAddress', component: AddAddressComponent },
+      { path: 'editAddress/:addressId', component: EditAddressComponent },
 
-    //address
-    {path:"listAddress", component:ListAddressComponent},
-    {path:"addAddress", component:AddAddressComponent},
-    {path:"editAddress/:addressId", component:EditAddressComponent},
-
-    //vendorDetails
-    {path:"listVendorDetails", component:ListVendorComponent},
-    {path:"addVendorDetails", component:AddVendorComponent}
-    
-  ]},
-  
-
-
-  
-  
+      //vendorDetails
+      { path: 'listVendorDetails', component: ListVendorComponent },
+      { path: 'addVendorDetails', component: AddVendorComponent },
+    ],
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

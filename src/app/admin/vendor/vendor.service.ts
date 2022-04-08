@@ -17,10 +17,18 @@ export class VendorService {
   }
 
   listVendorName():Observable<any>{
-    return this.httpClient.get("http://localhost:3000/listVendorName")
+    return this.httpClient.get("http://localhost:3000/listOnlyVendors")
   }
 
   listCategories():Observable<any>{
     return this.httpClient.get("http://localhost:3000/categories")
+  }
+
+  listSubCategories():Observable<any>{
+    return this.httpClient.get("http://localhost:3000/subcategories")
+  }
+
+  addVendor(vendorDetails:any):Observable<any>{
+    return this.httpClient.post("http://localhost:3000/",vendorDetails)
   }
 }

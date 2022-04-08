@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import {  HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddRoleComponent } from './admin/add-role/add-role.component';
 import { ListRoleComponent } from './admin/list-role/list-role.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,7 +38,9 @@ import { EditReviewComponent } from './admin/review/edit-review/edit-review.comp
 import { ListVendorComponent } from './admin/vendor/list-vendor/list-vendor.component';
 import { AddVendorComponent } from './admin/vendor/add-vendor/add-vendor.component';
 import { EditVendorComponent } from './admin/vendor/edit-vendor/edit-vendor.component';
- 
+import { AuthModule } from './auth/auth.module';
+import { AuthInterceptor } from './auth/auth-interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,8 +83,15 @@ import { EditVendorComponent } from './admin/vendor/edit-vendor/edit-vendor.comp
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgChartsModule,
+    AuthModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

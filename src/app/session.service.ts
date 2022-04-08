@@ -14,7 +14,7 @@ export class SessionService {
 
   //signUp 
   saveUser(user:any):Observable<any>{//observing that subscribe component
-    console.log(user);
+    // console.log(user);
     //node api
     return this.httpClient.post("http://localhost:3000/users",user)
   }

@@ -6,28 +6,44 @@ import { VendorService } from '../vendor.service';
 @Component({
   selector: 'app-list-vendor',
   templateUrl: './list-vendor.component.html',
-  styleUrls: ['./list-vendor.component.css']
+  styleUrls: ['./list-vendor.component.css'],
 })
 export class ListVendorComponent implements OnInit {
+  vendorDetails: Array<any> = [];
 
-  vendorDetails:Array<any> = []
-
-  constructor(private vendorService:VendorService, private toastr:ToastrService, private route:Router) { }
+  constructor(
+    private vendorService: VendorService,
+    private toastr: ToastrService,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
-    
-    this.listAllVendorDetails()
+    this.listAllVendorDetails();
   }
 
-  listAllVendorDetails(){
-    this.vendorService.listAllVendorDetails().subscribe(resp=>{
-      this.vendorDetails = resp.data
-      if(resp.status ==200){
-        this.toastr.success("", resp.msg, {timeOut:3000})
-      }else{
-        this.toastr.error("", resp.msg, {timeOut:3000})
+  listAllVendorDetails() {
+    this.vendorService.listAllVendorDetails().subscribe((resp) => {
+      this.vendorDetails = resp.data;
+      if (resp.status == 200) {
+        this.toastr.success('', resp.msg, { timeOut: 3000 });
+      } else {
+        this.toastr.error('', resp.msg, { timeOut: 3000 });
       }
-    })
+    });
   }
 
+  delVendor(vendorId: any) {
+    this.vendorService.delVendor(vendorId).subscribe((resp) => {
+      if (resp.status == 200) {
+        this.toastr.success('', resp.msg, { timeOut: 3000 });
+        this.listAllVendorDetails();
+      } else {
+        this.toastr.error('', resp.msg, { timeOut: 3000 });
+      }
+    });
+  }
+
+  editVendor(vendorId: any) {
+    this.route.navigateByUrl('admin/editVendorDetails/' + vendorId);
+  }
 }

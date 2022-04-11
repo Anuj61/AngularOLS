@@ -3,32 +3,50 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VendorService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor( private httpClient:HttpClient) { }
-
-
-  listAllVendorDetails():Observable<any>{
-    return this.httpClient.get("http://localhost:3000/vendorDetails")
+  listAllVendorDetails(): Observable<any> {
+    return this.httpClient.get('http://localhost:3000/vendorDetails');
   }
 
-  listVendorName():Observable<any>{
-    return this.httpClient.get("http://localhost:3000/listOnlyVendors")
+  listVendorName(): Observable<any> {
+    return this.httpClient.get('http://localhost:3000/listOnlyVendors');
   }
 
-  listCategories():Observable<any>{
-    return this.httpClient.get("http://localhost:3000/categories")
+  listVendorById(vendorId: any): Observable<any> {
+    return this.httpClient.get(
+      'http://localhost:3000/vendorDetails/' + vendorId
+    );
   }
 
-  listSubCategories():Observable<any>{
-    return this.httpClient.get("http://localhost:3000/subcategories")
+  listCategories(): Observable<any> {
+    return this.httpClient.get('http://localhost:3000/categories');
   }
 
-  addVendor(vendorDetails:any):Observable<any>{
-    return this.httpClient.post("http://localhost:3000/",vendorDetails)
+  listSubCategories(): Observable<any> {
+    return this.httpClient.get('http://localhost:3000/subcategories');
+  }
+
+  addVendor(vendorDetails: any): Observable<any> {
+    return this.httpClient.post(
+      'http://localhost:3000/vendorDetails',
+      vendorDetails
+    );
+  }
+
+  delVendor(vendorId: any): Observable<any> {
+    return this.httpClient.delete(
+      environment.backend_url + '/vendorDetails/' + vendorId
+    );
+  }
+
+  updateVendor(vendor: any): Observable<any> {
+    return this.httpClient.put('http://localhost:3000/vendorDetails', vendor);
   }
 }

@@ -1,1 +1,57 @@
-<p>edit-vendor works!</p>
+<div class="card">
+    <div class="card-body">
+
+        <h4 class="card-title">Edit Vendor Details</h4>
+        <div class="forms-sample">
+
+
+            <div class="form-group">
+                <label for="exampleSelectGender">Vendor Name</label>
+                <input type="text" class="form-control" disabled placeholder="{{vendorName}}">
+            </div>
+
+
+            <div class="form-group">
+                <label for="serviceDetail">Service Details</label>
+                <input type="text" class="form-control" placeholder="Service Details" id="serviceDetail"
+                    [(ngModel)]="serviceDetail">
+            </div>
+
+
+            <div class="form-group">
+                <label for="timing">Timing</label>
+                <input type="text" class="form-control" placeholder="Timing" id="timing" [(ngModel)]="timing">
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" placeholder="Price" id="price" [(ngModel)]="pricing">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleSelectGender">Category Selection</label>
+                <select class="form-control" [(ngModel)]="selectedCat">
+                    <!-- <option value="" disabled>Select Category</option> -->
+                    <option *ngFor="let category of categories" value="{{category._id}}">
+                        {{category.categoryName}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleSelectGender">Subcategory Selection</label>
+                <select class="form-control" [(ngModel)]="selectedSubCat">
+                    <!-- <option value="" disabled selected>{{selectedSubCat}}</option> -->
+                    <option *ngFor="let subcategory of subCategoires" value="{{subcategory._id}}">
+                        {{subcategory.serviceName}}
+                    </option>
+                </select>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary me-2" (click)="updateVendorDetails()">Submit</button>
+            <button class="btn btn-light" routerLink="/admin/listVendorDetails">Cancel</button>
+        </div>
+    </div>
+</div>

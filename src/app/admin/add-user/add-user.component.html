@@ -1,74 +1,61 @@
-<app-admin-header></app-admin-header><br><br>
-<!-- 
-FirstName : <input type="text" name="" id="" [(ngModel)] = "firstName"><br><br>
-Email : <input type="email" name="" id="" [(ngModel)] = "email"><br><br>
-Password : <input type="password" name="" id="" [(ngModel)] = "password"><br><br>
-Gender : Male<input type="radio" name="" id="" [(ngModel)] = "gender" value="male"> 
-        Female <input type="radio" name="" id="" [(ngModel)] = "gender" value="female"> <br><br>
+<app-admin-header></app-admin-header>
 
-Role: <select class="form-control" [(ngModel)] = "role" id="">
-        <option *ngFor="let r of roles" value="{{r._id}}" selected="{{r.roleName}}">{{r.roleName}}
-
-        </option>
-</select>
-Contact Number : <input type="tel" name="" id="" [(ngModel)] = "contactNumber"><br><br> 
-
-<input type="button" value="Submit" (click)="addUser()"> -->
-
-<div class="card-body">
-        <h4 class="card-title">Add User Form</h4>
-       
-        
-          <div class="form-group">
-            <label for="inputfirstName">FirstName</label>
-            <input type="text" class="form-control" placeholder="Username" id="inputFirstName" [(ngModel)] = "firstName">
-          </div>
-          <div class="form-group">
-            <label for="inputEmail">Email address</label>
-            <input type="email"  class="form-control" id="inputEmail" placeholder="Email"  [(ngModel)] = "email">
-           
-          </div>
-          <div class="form-group">
-            <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]= "password">
-          </div>
-          
-        
-          <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Gender</label>
-            <div class="col-sm-4">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" [(ngModel)]="gender"  value="Male">
-                  Male
-                <i class="input-helper"></i></label>
-              </div>
-            </div>
-            <div class="col-sm-5">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" [(ngModel)]="gender"  value="Female">
-                  Female
-                <i class="input-helper"></i></label>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="exampleSelectGender">Role Selection</label>
-            <select class="form-control" [(ngModel)] = "role">
-              <option *ngFor="let r of roles" value="{{r._id}}">
-                {{r.roleName}}
-              </option>
-            </select>
-            </div>
-
-            <div class="form-group">
-              <label for="contactNumber">Contact Number</label>
-              <input type="tel" class="form-control" placeholder="contactNumber" id="contactNumber" [(ngModel)] = "contactNumber">
-            </div>
-
-          <button type="submit" class="btn btn-primary me-2" (click)="addUser()">Submit</button>
-          <button class="btn btn-light" routerLink="/admin/listUser">Cancel</button>
-    
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">User Add form</h4>
+    <div class="forms-sample">
+      <div class="form-group">
+        <label for="exampleInputUsername1">Username</label>
+        <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username"
+          [(ngModel)]="firstName">
       </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+          [(ngModel)]="password">
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Gender</label>
+        <div class="col-sm-4">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" [(ngModel)]="gender" value="Male">
+              Male
+              <i class="input-helper"></i></label>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" [(ngModel)]="gender" value="Female">
+              Female
+              <i class="input-helper"></i></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleSelectGender">Role Selection</label>
+        <select class="form-control" [(ngModel)]="role">
+          <option *ngFor="let r of roles" value="{{r._id}}">
+            {{r.roleName}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contactNumber">Contact Number</label>
+        <input type="tel" class="form-control" placeholder="contactNumber" id="contactNumber"
+          [(ngModel)]="contactNumber">
+      </div>
+
+      <button type="submit" class="btn btn-primary me-2" (click)="addUser()">Submit</button>
+      <button class="btn btn-light" routerLink="/admin/listUser">Cancel</button>
+    </div>
+  </div>
+</div>

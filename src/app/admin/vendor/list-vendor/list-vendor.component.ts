@@ -44,6 +44,6 @@ export class ListVendorComponent implements OnInit {
   }
 
   editVendor(vendorId: any) {
-    this.route.navigateByUrl('admin/editVendorDetails/' + vendorId);
+    this.route.navigateByUrl('/admin/listVendorAddresses' + vendorId);
   }
 }

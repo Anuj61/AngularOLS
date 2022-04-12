@@ -4,36 +4,35 @@ import { ToastrService } from 'ngx-toastr';
 import { AddressService } from '../address.service';
 
 @Component({
-  selector: 'app-add-address',
-  templateUrl: './add-address.component.html',
-  styleUrls: ['./add-address.component.css'],
+  selector: 'app-add-vendor-address',
+  templateUrl: './add-vendor-address.component.html',
+  styleUrls: ['./add-vendor-address.component.css'],
 })
-export class AddAddressComponent implements OnInit {
-  users: Array<any> = [];
-  userId: string = '';
+export class AddVendorAddressComponent implements OnInit {
+  vendors: Array<any> = [];
+  vendorId: string = '';
   addressDetails: string = '';
   pincode: string = '';
 
   constructor(
-    private router: Router,
     private addressService: AddressService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.getAddressUsers();
+    this.getVendor();
   }
 
-  getAddressUsers() {
-    this.addressService.getUsers().subscribe((resp) => {
-      this.users = resp.data;
-      // console.log(this.users)
+  getVendor() {
+    this.addressService.getVendors().subscribe((resp) => {
+      this.vendors = resp.data;
     });
   }
 
   addAddress() {
     let address = {
-      userId: this.userId,
+      userId: this.vendorId,
       address: this.addressDetails,
       pincode: this.pincode,
     };
@@ -43,6 +42,7 @@ export class AddAddressComponent implements OnInit {
         this.toastr.success('', resp.msg, { timeOut: 3000 });
         this.router.navigateByUrl('/admin/listAddress');
       } else {
+        console.log(resp);
         this.toastr.error('', resp.msg, { timeOut: 3000 });
       }
     });

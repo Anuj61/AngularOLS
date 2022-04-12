@@ -30,6 +30,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 import { AuthGuard } from './auth/auth.guard';
 import { EditVendorComponent } from './admin/vendor/edit-vendor/edit-vendor.component';
+import { AddVendorAddressComponent } from './admin/address/add-vendor-address/add-vendor-address.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -80,6 +81,9 @@ const routes: Routes = [
       { path: 'listVendorDetails', component: ListVendorComponent },
       { path: 'addVendorDetails', component: AddVendorComponent },
       { path: 'editVendorDetails/:vendorId', component: EditVendorComponent },
+
+      //vendorAddress
+      { path: 'addVendorAddresses', component: AddVendorAddressComponent },
     ],
     canActivate: [AuthGuard],
   },

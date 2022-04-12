@@ -40,6 +40,7 @@ import { AddVendorComponent } from './admin/vendor/add-vendor/add-vendor.compone
 import { EditVendorComponent } from './admin/vendor/edit-vendor/edit-vendor.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthInterceptor } from './auth/auth-interceptor';
+import { AddVendorAddressComponent } from './admin/address/add-vendor-address/add-vendor-address.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     ListVendorComponent,
     AddVendorComponent,
     EditVendorComponent,
+    AddVendorAddressComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,33 +6,31 @@ import { SessionService } from '../session.service';
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.css']
+  styleUrls: ['./forgot-password.component.css'],
 })
 export class ForgotPasswordComponent implements OnInit {
+  constructor(
+    private sessionService: SessionService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
-  constructor(private sessionService:SessionService, private router:Router, private toastr:ToastrService) { }
+  email: string = '';
 
-  email:string= ""
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-
-  recoverPassword(){
+  recoverPassword() {
     // alert(this.email)
-    let user = {email:this.email}
-    this.sessionService.sendOtpForPassword(user).subscribe(resp=>{
-
-    
-      if(resp.status == -1){
-        this.toastr.error("", resp.msg, {timeOut:3000})
-      }else{
-        this.toastr.success("", resp.msg, {timeOut:3000})
-        this.router.navigateByUrl("/changePassword")
-        
+    let user = { email: this.email };
+    this.sessionService.sendOtpForPassword(user).subscribe((resp) => {
+      if (resp.status == -1) {
+        this.toastr.error('', resp.msg, { timeOut: 3000 });
+      } else {
+        let key = 'email';
+        localStorage.setItem(key, this.email);
+        this.toastr.success('', resp.msg, { timeOut: 3000 });
+        this.router.navigateByUrl('/changePassword');
       }
-    })
+    });
   }
-
-
 }

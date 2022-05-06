@@ -10,8 +10,6 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { AddCategoryComponent } from './admin/category/add-category/add-category.component';
 import { EditCategoryComponent } from './admin/category/edit-category/edit-category.component';
 import { ListCategoriesComponent } from './admin/category/list-categories/list-categories.component';
-// import { DelRoleComponent } from './admin/del-role/del-role.component';
-// import { DelUserComponent } from './admin/del-user/del-user.component';
 import { EditRoleComponent } from './admin/edit-role/edit-role.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
 import { ListRoleComponent } from './admin/list-role/list-role.component';

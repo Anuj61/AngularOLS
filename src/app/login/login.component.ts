@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {}
 
   login() {
-    console.log('start');
+    // console.log('start');
 
     let isError = false;
     if (this.email == '' || this.email.trim().length == 0) {
@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     if (isError) {
     } else {
-      console.log('Inside else');
+      // console.log('Inside else');
 
       const user = {
         email: this.email,
